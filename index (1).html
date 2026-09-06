@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emy — Facialiste à domicile, Paris</title>
+<meta name="description" content="Soins du visage à domicile à Paris. Kobido, facial stretching, techniques myo-fasciales. Diagnostic morpho-facial inclus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grege:#F5EFE9;
+  --grege-2:#EDE3DB;
+  --encre:#3B2E29;
+  --rose:#B0806F;
+  --rose-clair:#C9A192;
+  --or:#BE9F72;
+  --mesure:34rem;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--grege);color:var(--encre);
+  font-family:'Jost',system-ui,sans-serif;font-weight:300;
+  font-size:1.0625rem;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Marcellus',Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+h1{font-size:clamp(2.6rem,7vw,4.4rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,4vw,2.6rem)}
+h3{font-size:1.35rem}
+p{margin:0 0 1.1em;max-width:var(--mesure)}
+a{color:inherit}
+.wrap{width:min(100% - 2.5rem,68rem);margin-inline:auto}
+section{padding:clamp(4rem,9vw,7.5rem) 0;border-top:1px solid var(--grege-2)}
+
+/* ---------- en-tête ---------- */
+header{position:sticky;top:0;z-index:10;background:rgba(245,239,233,.9);backdrop-filter:blur(8px)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1.1rem 0}
+/* Remplacer par le fichier logo source (SVG) — voir note en bas de page */
+.wordmark{font-family:'Marcellus',serif;font-size:1.75rem;line-height:1;
+  background:linear-gradient(100deg,var(--rose),var(--or));
+  -webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none}
+.wordmark small{display:block;font-family:'Jost';font-size:.55rem;letter-spacing:.34em;
+  color:var(--rose);-webkit-text-fill-color:var(--rose);margin-top:.35rem}
+nav{display:flex;align-items:center;gap:1.75rem;font-size:.9rem}
+nav a{text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:var(--rose)}
+.cta{display:inline-block;background:var(--encre);color:var(--grege);text-decoration:none;
+  padding:.7rem 1.5rem;border-radius:2rem;font-size:.9rem;letter-spacing:.02em;border:1px solid var(--encre)}
+.cta:hover,.cta:focus-visible{background:var(--rose);border-color:var(--rose)}
+.cta.clair{background:transparent;color:var(--encre)}
+.cta.clair:hover{background:var(--encre);color:var(--grege)}
+#menu-nav{display:flex}
+.burger{display:none;background:none;border:0;font:inherit;cursor:pointer;padding:.5rem}
+
+/* ---------- hero ---------- */
+.hero{border-top:0;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;
+  padding-top:clamp(3rem,7vw,6rem)}
+.hero p.chapeau{font-size:1.15rem;max-width:28rem;margin-top:1.75rem}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.25rem}
+.profil{width:100%;height:auto;max-height:32rem}
+.profil path{fill:none;stroke:var(--rose);stroke-width:2.5;stroke-linecap:round}
+.trace{stroke-dasharray:1400;stroke-dashoffset:1400;animation:trace 2.6s cubic-bezier(.6,.05,.2,1) .3s forwards}
+@keyframes trace{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.trace{animation:none;stroke-dashoffset:0}}
+
+/* ---------- carte des soins ---------- */
+.soin{display:grid;grid-template-columns:1fr auto;gap:.5rem 2rem;align-items:baseline;
+  padding:1.5rem 0;border-bottom:1px solid var(--grege-2)}
+.soin:first-of-type{border-top:1px solid var(--grege-2)}
+.soin h3{grid-column:1}
+.soin .prix{grid-column:2;grid-row:1;font-family:'Marcellus',serif;font-size:1.25rem;white-space:nowrap}
+.soin p{grid-column:1;margin:0;color:#6b564e;font-size:.98rem}
+.soin .duree{grid-column:2;font-size:.85rem;letter-spacing:.12em;color:var(--rose);text-align:right}
+.note{font-size:.92rem;color:#6b564e;margin-top:2rem;max-width:38rem}
+
+/* ---------- cures ---------- */
+.cures{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem;margin-top:2.5rem}
+.cure{border:1px solid var(--rose-clair);padding:2rem}
+.cure .prix{font-family:'Marcellus',serif;font-size:1.4rem;display:block;margin-top:1rem}
+
+/* ---------- déroulé (vraie séquence) ---------- */
+.etapes{list-style:none;padding:0;margin:2.5rem 0 0;counter-reset:e}
+.etapes li{counter-increment:e;display:grid;grid-template-columns:3rem 1fr;gap:1.5rem;
+  padding:1.4rem 0;border-bottom:1px solid var(--grege-2)}
+.etapes li::before{content:counter(e,decimal-leading-zero);font-family:'Marcellus',serif;
+  color:var(--or);font-size:1.1rem}
+.etapes p{margin:.3rem 0 0;font-size:.98rem;color:#6b564e}
+
+/* ---------- à propos ---------- */
+.apropos{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.techniques{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;padding:0;list-style:none}
+.techniques li{border:1px solid var(--rose-clair);border-radius:2rem;padding:.35rem 1rem;font-size:.88rem}
+
+/* ---------- contact ---------- */
+.contact{background:var(--grege-2);text-align:center}
+.contact p{margin-inline:auto}
+.coord{font-family:'Marcellus',serif;font-size:clamp(1.3rem,3vw,1.9rem);margin:1.5rem 0}
+.coord a{text-decoration:none;border-bottom:1px solid var(--rose)}
+
+footer{padding:3rem 0;font-size:.85rem;color:#75605a}
+footer a{color:inherit}
+
+@media(max-width:820px){
+  .hero,.apropos{grid-template-columns:1fr}
+  .hero .profil{order:-1;max-height:18rem}
+  #menu-nav{display:none;position:absolute;top:100%;right:1.25rem;left:1.25rem;
+    flex-direction:column;align-items:flex-start;gap:1rem;background:var(--grege);
+    border:1px solid var(--grege-2);padding:1.5rem}
+  #menu-nav.ouvert{display:flex}
+  .burger{display:block}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="wordmark" href="#haut">Emy<small>Facialiste · Paris</small></a>
+    <button class="burger" aria-expanded="false" aria-controls="menu-nav">Menu</button>
+    <nav id="menu-nav">
+      <a href="#soins">Les soins</a>
+      <a href="#cures">Les cures</a>
+      <a href="#deroule">Le déroulé</a>
+      <a href="#apropos">Qui suis-je</a>
+      <a class="cta" href="#contact">Prendre rendez-vous</a>
+    </nav>
+  </div>
+</header>
+
+<main id="haut">
+
+  <section class="hero wrap">
+    <div>
+      <h1>Le soin du visage<br>vient à vous.</h1>
+      <p class="chapeau">Massage Kobido, facial stretching et techniques myo-fasciales, dans votre salon plutôt que dans un institut. Une heure entière pour votre visage, à Paris.</p>
+      <div class="actions">
+        <a class="cta" href="#contact">Prendre rendez-vous</a>
+        <a class="cta clair" href="#soins">Voir les soins</a>
+      </div>
+    </div>
+    <svg class="profil" viewBox="0 0 400 520" role="img" aria-label="Profil de visage dessiné d'un seul trait">
+      <path class="trace" d="M250 30 C160 40 110 120 108 205 C106 240 128 250 140 262
+        C152 274 138 286 128 300 C120 312 132 318 146 320 C158 322 152 334 150 344
+        C148 356 168 358 176 352 C184 346 178 372 172 384 C168 396 190 412 214 418
+        C250 428 268 460 262 505"/>
+    </svg>
+  </section>
+
+  <section id="soins" class="wrap">
+    <h2>Les soins</h2>
+    <p>Chaque soin commence par un diagnostic morpho-facial : je regarde votre visage, vos tensions, votre peau, et j'adapte le protocole.</p>
+
+    <div class="soin">
+      <h3>Soin Kobido</h3>
+      <span class="prix">120 €</span>
+      <p>Le massage japonais traditionnel : rythme rapide, effet tenseur immédiat, teint réveillé.</p>
+      <span class="duree">60 MIN</span>
+    </div>
+
+    <div class="soin">
+      <h3>Soin lift myo-fascial</h3>
+      <span class="prix">120 €</span>
+      <p>Travail en profondeur sur les fascias et les muscles peauciers pour relâcher les tensions et redessiner les contours.</p>
+      <span class="duree">60 MIN</span>
+    </div>
+
+    <div class="soin">
+      <h3>Soin détox</h3>
+      <span class="prix">120 €</span>
+      <p>Drainage et relance de la circulation : traits désengorgés, cernes atténués, sensation de légèreté.</p>
+      <span class="duree">60 MIN</span>
+    </div>
+
+    <div class="soin">
+      <h3>Soin Signature</h3>
+      <span class="prix">150 €</span>
+      <p>Le protocole complet, où toutes les techniques se répondent. À réserver quand vous voulez le soin le plus abouti.</p>
+      <span class="duree">75 MIN</span>
+    </div>
+
+    <p class="note">Tous les soins comprennent le diagnostic morpho-facial ainsi que les rituels de préparation et de fin de soin. Je me déplace avec ma table, mon linge et mes produits — vous n'avez rien à prévoir.</p>
+  </section>
+
+  <section id="cures" class="wrap">
+    <h2>Les cures</h2>
+    <p>Le massage du visage donne un résultat visible dès la première séance, mais c'est la régularité qui installe les effets dans la durée.</p>
+    <div class="cures">
+      <div class="cure">
+        <h3>Découverte</h3>
+        <p>Quatre séances de 60 minutes pour amorcer le travail et voir ce que votre visage change.</p>
+        <span class="prix">— € <!-- tarif à compléter --></span>
+      </div>
+      <div class="cure">
+        <h3>Longévité</h3>
+        <p>Un accompagnement au long cours, une séance par mois, pour entretenir la fermeté et le grain de peau.</p>
+        <span class="prix">— € <!-- tarif à compléter --></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="deroule" class="wrap">
+    <h2>Le déroulé d'une séance</h2>
+    <ol class="etapes">
+      <li><div><h3>J'arrive et j'installe</h3><p>Table, linge, huiles : je m'installe dans la pièce de votre choix, il vous faut simplement deux mètres carrés au calme.</p></div></li>
+      <li><div><h3>Diagnostic morpho-facial</h3><p>On échange quelques minutes sur votre peau, vos habitudes, vos tensions. Le protocole se décide là.</p></div></li>
+      <li><div><h3>Rituel de préparation</h3><p>Démaquillage, nettoyage, mise en condition de la peau.</p></div></li>
+      <li><div><h3>Le massage</h3><p>Le cœur du soin. Manœuvres profondes, drainage, étirements — les yeux fermés, rien à faire.</p></div></li>
+      <li><div><h3>Rituel de fin</h3><p>Soin adapté à votre peau et retour en douceur. Je repars, vous restez chez vous.</p></div></li>
+    </ol>
+  </section>
+
+  <section id="apropos" class="wrap apropos">
+    <div>
+      <h2>Qui suis-je</h2>
+      <p>Je m'appelle Émilie Dubé. J'ai passé des années dans l'hôtellerie de luxe — le yachting, la grande restauration, les maisons privées — où j'ai appris une chose : le vrai luxe, c'est l'attention portée à quelqu'un.</p>
+      <p>J'ai repris mes études pour en faire mon métier. Titulaire du CAP Esthétique et formée aux techniques japonaises et myo-fasciales, je pratique aujourd'hui le massage du visage comme un soin de fond : ni protocole standard, ni promesse miracle, mais un travail manuel régulier sur les muscles, les fascias et la circulation.</p>
+    </div>
+    <div>
+      <h3>Formations et techniques</h3>
+      <ul class="techniques">
+        <li>Kobido</li>
+        <li>Facial stretching</li>
+        <li>Techniques myo-fasciales</li>
+        <li>Drainage détox</li>
+        <li>Gua sha</li>
+        <li>CAP Esthétique</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Prendre rendez-vous</h2>
+      <p>Écrivez-moi avec votre quartier et vos disponibilités, je vous réponds sous 24 heures.</p>
+      <p class="coord"><a href="mailto:contact@exemple.fr">contact@exemple.fr</a></p>
+      <p class="coord"><a href="tel:+33600000000">06 00 00 00 00</a></p>
+      <p class="note" style="margin-inline:auto">Je me déplace dans Paris intra-muros. Pour les communes limitrophes, écrivez-moi, on regarde ensemble.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Émilie Dubé — Micro-entreprise · SIRET à compléter · <a href="#">Mentions légales</a> · <a href="#">Conditions de réservation</a></p>
+</footer>
+
+<script>
+  const b = document.querySelector('.burger'), m = document.getElementById('menu-nav');
+  b.addEventListener('click', () => {
+    const ouvert = m.classList.toggle('ouvert');
+    b.setAttribute('aria-expanded', ouvert);
+  });
+  m.addEventListener('click', e => {
+    if (e.target.tagName === 'A') { m.classList.remove('ouvert'); b.setAttribute('aria-expanded', false); }
+  });
+</script>
+</body>
+</html>
