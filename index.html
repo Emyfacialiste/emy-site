@@ -130,6 +130,10 @@ nav a:hover,nav a:focus-visible{border-color:var(--gold)}
   letter-spacing:.1em;color:var(--rose-dark);margin:.5rem 0}
 .coord a{text-decoration:none;border-bottom:1px solid rgba(176,138,84,.5)}
 .coord a:hover{border-color:var(--rose-dark)}
+.coord a.ig{border-bottom:0;display:inline-flex;align-items:center;gap:.55rem}
+.coord a.ig span{border-bottom:1px solid rgba(176,138,84,.5)}
+.coord a.ig:hover span{border-color:var(--rose-dark)}
+.coord a.ig svg{width:.8em;height:.8em;flex:none;fill:none;stroke:currentColor;stroke-width:1.7}
 .lieux{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2.5rem auto 0;
   max-width:36rem;text-align:left}
 .lieux div{border:1px solid rgba(176,138,84,.4);padding:1.5rem}
@@ -327,7 +331,7 @@ footer a{color:inherit}
       <p class="note">Mes soins sont réservés à une clientèle féminine.</p>
       <p class="coord"><a href="tel:+33632972146">06 32 97 21 46</a></p>
       <p class="coord"><a href="mailto:contact@emyfacialiste.fr">contact@emyfacialiste.fr</a></p>
-      <p class="coord"><a href="https://www.instagram.com/emy.facialiste/" target="_blank" rel="me noopener">@emy.facialiste</a></p>
+      <p class="coord"><a class="ig" href="https://www.instagram.com/emy.facialiste/" target="_blank" rel="me noopener" aria-label="Instagram @emy.facialiste"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.4"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg><span>@emy.facialiste</span></a></p>
       <div class="lieux">
         <div>
           <span class="nom">Sur place</span>
