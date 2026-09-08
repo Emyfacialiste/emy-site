@@ -83,6 +83,7 @@ nav a:hover,nav a:focus-visible{border-color:var(--gold)}
 /* ---------- hero ---------- */
 .hero{text-align:center;padding-top:clamp(4rem,10vw,7.5rem);padding-bottom:0}
 .hero h1{max-width:15ch;margin-inline:auto}
+.insecable{white-space:nowrap}
 .hero .chapeau{font-size:1.3rem;font-style:italic;max-width:32rem;margin:2rem auto 0;
   color:var(--rose-dark)}
 .hero .actions{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:2.5rem}
@@ -156,6 +157,9 @@ footer a{color:inherit}
     border:1px solid rgba(176,138,84,.4);padding:2rem}
   #menu-nav.ouvert{display:flex}
   .burger{display:block}
+}
+@media(max-width:360px){
+  .coord{font-size:1.15rem;letter-spacing:.04em}
 }
 </style>
 <script type="application/ld+json">
@@ -231,7 +235,7 @@ footer a{color:inherit}
 <main id="haut">
 
   <section class="hero wrap">
-    <h1>Le massage visage<br>haute couture, chez vous</h1>
+    <h1>Le massage visage<br>haute couture, <span class="insecable">chez vous</span></h1>
     <p class="chapeau">Votre parenthèse bien-être et longévité</p>
     <div class="actions">
       <a class="lien-fort" href="#contact">Prendre rendez-vous</a>
